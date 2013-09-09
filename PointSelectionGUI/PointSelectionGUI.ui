@@ -14,7 +14,7 @@
    <string>PointSelection</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="widget" native="true">
+   <widget class="QWidget" name="_widget" native="true">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -24,7 +24,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_save">
+   <widget class="QPushButton" name="_pushButton_exit">
     <property name="geometry">
      <rect>
       <x>570</x>
@@ -34,10 +34,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>Save</string>
+     <string>Exit</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_reset">
+   <widget class="QPushButton" name="_pushButton_reset">
     <property name="geometry">
      <rect>
       <x>480</x>

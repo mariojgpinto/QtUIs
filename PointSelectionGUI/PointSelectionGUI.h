@@ -11,18 +11,37 @@ namespace Ui {
 
 #include <ToolBoxQT.h>
 
-class __declspec(dllexport) PointSelectionGUI : public QMainWindow
+#ifdef _MY_UI_DLL
+    #if (defined(QT_DLL) || defined(QT_SHARED)) && !defined(QT_PLUGIN)
+        #define EXPORT Q_DECL_EXPORT
+    #else
+        #define EXPORT
+    #endif
+#else
+        #define EXPORT Q_DECL_IMPORT
+#endif 
+
+class EXPORT PointSelectionGUI : public QMainWindow
 {
+	Q_OBJECT
+
 public:
-	PointSelectionGUI(int dummy, QWidget *parent = 0, Qt::WFlags flags = 0);
+	PointSelectionGUI(QWidget *parent = 0, Qt::WFlags flags = 0);
 	~PointSelectionGUI();
 
-public:
-    void mousePressEvent(QMouseEvent *event);
+	void set_image(cv::Mat &img);
 
+	void get_points(std::vector<cv::Point*> &pts);
+
+    void mousePressEvent(QMouseEvent *event);
+	
 public slots:
-	void on_save();
+	void on_exit();
 	void on_reset();
+
+private:
+	void setup_windows();
+	void setup_connections();
 
 private:
 	Ui::PointSelectionGUI* _ui;
