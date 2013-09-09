@@ -54,7 +54,6 @@ void PointSelectionGUI::setup_connections(){
 //-----------------------------------------------------------------------------
 void PointSelectionGUI::on_exit(){
 	this->hide();
-	exit(0);
 }
 
 void PointSelectionGUI::on_reset(){
